@@ -8,6 +8,54 @@ Chap11::~Chap11()
 {
 }
 
+void Chap11::open_close() {
+	Mat src = imread("images/milkdrop.bmp", IMREAD_GRAYSCALE);
+
+	if (src.empty()) {
+		cerr << "Image load failed!" << endl;
+		return;
+	}
+
+	Mat bin;
+	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+
+	Mat dst1, dst2;
+	morphologyEx(bin, dst1, MORPH_OPEN, Mat());
+	morphologyEx(bin, dst2, MORPH_CLOSE, Mat());
+
+	imshow("src", src);
+	imshow("bin", bin);
+	imshow("dst1", dst1);
+	imshow("dst2", dst2);
+
+	waitKey();
+	destroyAllWindows();
+}
+
+void Chap11::erode_dialte() {
+	Mat src = imread("images/milkdrop.bmp", IMREAD_GRAYSCALE);
+
+	if (src.empty()) {
+		cerr << "Image load failed!" << endl;
+		return;
+	}
+
+	Mat bin;
+	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+
+	Mat dst1, dst2;
+	erode(bin, dst1, Mat());
+	dilate(bin, dst2, Mat());
+
+	imshow("src", src);
+	imshow("bin", bin);
+	imshow("dst1", dst1);
+	imshow("dst2", dst2);
+
+	waitKey();
+	destroyAllWindows();
+}
+
 void Chap11::adaptive() {
 	Mat src = imread("images/sudoku.jpg", IMREAD_GRAYSCALE);
 

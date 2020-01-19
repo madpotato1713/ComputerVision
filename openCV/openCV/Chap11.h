@@ -15,5 +15,7 @@ public:
 	static void ex_threshold(int argc, char* argv[]);
 	static void on_trackbar(int pos, void* userdata);
 	static void adaptive();
+	static void erode_dialte();
+	static void open_close();
 };
 
