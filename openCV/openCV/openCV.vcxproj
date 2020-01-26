@@ -151,12 +151,14 @@
   <ItemGroup>
     <ClCompile Include="Chap10.cpp" />
     <ClCompile Include="Chap11.cpp" />
+    <ClCompile Include="Chap12.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PixelAccess.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chap10.h" />
     <ClInclude Include="Chap11.h" />
+    <ClInclude Include="Chap12.h" />
     <ClInclude Include="PixelAccess.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
